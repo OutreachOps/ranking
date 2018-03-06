@@ -1,2 +1,6 @@
 # Ranking
-Solaris 7 player ranking library 
+Outreach Operations player ranking library 
+
+Ranking library for;
+ - Elo based player ranking.
+
