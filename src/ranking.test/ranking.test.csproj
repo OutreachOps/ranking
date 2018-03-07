@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>Solaris7.Ranking.Test</AssemblyName>
+    <AssemblyName>OutreachOperations.Ranking.Test</AssemblyName>
 
-    <RootNamespace>Solaris7.Ranking.Test</RootNamespace>
+    <RootNamespace>OutreachOperations.Ranking.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +19,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ranking\ranking.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="glicko2\" />
   </ItemGroup>
 
 </Project>

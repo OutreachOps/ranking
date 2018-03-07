@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Solaris7.Ranking.Elo
+namespace OutreachOperations.Ranking.Elo
 {
     internal class PlayerRatingCalculator
     {

@@ -1,4 +1,4 @@
-﻿using Solaris7.Ranking.Elo;
+﻿using OutreachOperations.Ranking.Elo;
 using Xunit;
 
 namespace Solaris7.Ranking.Test.Elo

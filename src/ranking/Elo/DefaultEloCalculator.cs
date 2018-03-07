@@ -1,4 +1,4 @@
-﻿namespace Solaris7.Ranking.Elo
+﻿namespace OutreachOperations.Ranking.Elo
 {
     /// <summary>
     /// https://metinmediamath.wordpress.com/2013/11/27/how-to-calculate-the-elo-rating-including-example/

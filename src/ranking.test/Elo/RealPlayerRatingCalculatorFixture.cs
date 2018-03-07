@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Solaris7.Ranking.Elo;
+﻿using OutreachOperations.Ranking.Elo;
 using Xunit;
 
-namespace Solaris7.Ranking.Test.Elo
+namespace OutreachOperations.Ranking.Test.Elo
 {
 
     /// <summary>

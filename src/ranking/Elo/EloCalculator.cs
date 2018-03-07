@@ -1,6 +1,4 @@
-﻿using System.Threading;
-
-namespace Solaris7.Ranking.Elo
+﻿namespace OutreachOperations.Ranking.Elo
 {
     public interface EloCalculator
     {

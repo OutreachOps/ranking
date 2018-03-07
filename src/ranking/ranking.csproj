@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>Solaris7.Ranking</AssemblyName>
-    <RootNamespace>Solaris7.Ranking</RootNamespace>
+    <AssemblyName>OutreachOperations.Ranking</AssemblyName>
+    <RootNamespace>OutreachOperations.Ranking</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

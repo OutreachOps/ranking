@@ -17,5 +17,5 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("7209fb37-3815-4a60-b912-d01cd4487414")]
-[assembly: InternalsVisibleTo("Solaris7.Ranking.Test")]
+[assembly: InternalsVisibleTo("OutreachOperations.Ranking.Test")]
 
