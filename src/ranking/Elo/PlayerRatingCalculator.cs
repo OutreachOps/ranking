@@ -16,7 +16,5 @@ namespace OutreachOperations.Ranking.Elo
             var ratingChange = k * (playerOutcome - expectedOutcome / 100);
             return playerRating + (int) Math.Round(ratingChange);
         }
-
-
     }
 }

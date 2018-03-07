@@ -1,7 +1,7 @@
 ﻿using OutreachOperations.Ranking.Elo;
 using Xunit;
 
-namespace Solaris7.Ranking.Test.Elo
+namespace OutreachOperations.Ranking.Test.Elo
 {
     public class DefaultEloCalculatorFixture
     {
@@ -20,7 +20,7 @@ namespace Solaris7.Ranking.Test.Elo
 
             var result = calculator.Calculate(
                 new CurrentPlayerRatingDefault {PlayerId = "A", Rating = 1572}
-                , new CurrentPlayerRatingDefault {PlayerId = "B", Rating = 1583}, Outcome.PlayerAWin);
+                , new CurrentPlayerRatingDefault {PlayerId = "B", Rating = 1583}, MatchOutcome.PlayerAWin);
 
             Assert.Equal(1572 + 8,result.PlayerA.Rating);
             Assert.Equal(1583 -8, result.PlayerB.Rating);
@@ -34,7 +34,7 @@ namespace Solaris7.Ranking.Test.Elo
 
             var result = calculator.Calculate(
                 new CurrentPlayerRatingDefault { PlayerId = "A", Rating = 1572 }
-                , new CurrentPlayerRatingDefault { PlayerId = "B", Rating = 1583 }, Outcome.PlayerBWin);
+                , new CurrentPlayerRatingDefault { PlayerId = "B", Rating = 1583 }, MatchOutcome.PlayerBWin);
 
             Assert.Equal(1572 - 7, result.PlayerA.Rating);
             Assert.Equal(1583 + 7, result.PlayerB.Rating);
@@ -47,7 +47,7 @@ namespace Solaris7.Ranking.Test.Elo
 
             var result = calculator.Calculate(
                 new CurrentPlayerRatingDefault { PlayerId = "A", Rating = 1572 }
-                , new CurrentPlayerRatingDefault { PlayerId = "B", Rating = 1583 }, Outcome.Draw);
+                , new CurrentPlayerRatingDefault { PlayerId = "B", Rating = 1583 }, MatchOutcome.Draw);
 
             Assert.Equal(1572 , result.PlayerA.Rating);
             Assert.Equal(1583 , result.PlayerB.Rating);

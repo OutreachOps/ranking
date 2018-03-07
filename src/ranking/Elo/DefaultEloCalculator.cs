@@ -4,12 +4,19 @@
     /// https://metinmediamath.wordpress.com/2013/11/27/how-to-calculate-the-elo-rating-including-example/
     /// 
     /// </summary>
-    public class DefaultEloCalculator : EloCalculator
+    internal class DefaultEloCalculator : EloCalculator
     {
         private int _maximumRatingChange = 15;
 
-
-        public NewRatings Calculate(CurrentPlayerRating playerA, CurrentPlayerRating playerB, Outcome outCome)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="playerA">Player 'A' of Match</param>
+        /// <param name="playerB">Player 'B' of Match</param>
+        /// <param name="outCome">The outcome of the match either win, loss or draw</param>
+        /// <returns>New ratings for both players</returns>
+        /// TODO provide simplified signature that does not require player object to be created.
+        public NewRatings Calculate(CurrentPlayerRating playerA, CurrentPlayerRating playerB, MatchOutcome outCome)
         {
             PlayerRatingCalculator calculator = new PlayerRatingCalculator();
 
@@ -20,49 +27,39 @@
             decimal playerAOutcome = 0;
             switch (outCome)
             {
-                case Outcome.PlayerAWin:
+                case MatchOutcome.PlayerAWin:
                     playerAOutcome = 1;
                     break;
-                case Outcome.Draw:
+                case MatchOutcome.Draw:
                     playerAOutcome = 0.5M;
 
                     break;
-                case Outcome.PlayerBWin:
+                case MatchOutcome.PlayerBWin:
                     playerAOutcome = 0;
 
                     break;
             }
+
             decimal playerBOutcome = 0;
             switch (outCome)
             {
-                case Outcome.PlayerAWin:
+                case MatchOutcome.PlayerAWin:
                     playerBOutcome = 0;
                     break;
-                case Outcome.Draw:
+                case MatchOutcome.Draw:
                     playerBOutcome = 0.5M;
 
                     break;
-                case Outcome.PlayerBWin:
+                case MatchOutcome.PlayerBWin:
                     playerBOutcome = 1;
 
                     break;
             }
-
-
+            
             var newPLayerRatingA = new NewlayerRatingsDefault() {PlayerId = "A", Rating = calculator.CalculateNewRating(playerA.Rating, _maximumRatingChange, playerAExpectedOutcome, playerAOutcome)};
             var newPLayerRatingB = new NewlayerRatingsDefault() {PlayerId = "B", Rating = calculator.CalculateNewRating(playerB.Rating, _maximumRatingChange, playerBExpectedOutcome, playerBOutcome)};
-
-
-
-
-            return new NewRatingsDefault(){PlayerA = newPLayerRatingA,PlayerB = newPLayerRatingB};
+            
+            return new NewRatingsDefault {PlayerA = newPLayerRatingA,PlayerB = newPLayerRatingB};
         }
-    }
-
-    public enum Outcome
-    {
-        PlayerAWin,
-        Draw,
-        PlayerBWin
     }
 }
