@@ -15,7 +15,6 @@
         /// <param name="playerB">Player 'B' of Match</param>
         /// <param name="outCome">The outcome of the match either win, loss or draw</param>
         /// <returns>New ratings for both players</returns>
-        /// TODO provide simplified signature that does not require player object to be created.
         public NewRatings Calculate(CurrentPlayerRating playerA, CurrentPlayerRating playerB, MatchOutcome outCome)
         {
             PlayerRatingCalculator calculator = new PlayerRatingCalculator();
@@ -60,6 +59,12 @@
             var newPLayerRatingB = new NewlayerRatingsDefault() {PlayerId = "B", Rating = calculator.CalculateNewRating(playerB.Rating, _maximumRatingChange, playerBExpectedOutcome, playerBOutcome)};
             
             return new NewRatingsDefault {PlayerA = newPLayerRatingA,PlayerB = newPLayerRatingB};
+        }
+
+        public NewRatings Calculate(int playerARating, string playerAId, int playerBRating, string playerBId, MatchOutcome outCome)
+        {
+            return Calculate(new CurrentPlayerRatingDefault {PlayerId = playerAId, Rating = playerARating}
+                , new CurrentPlayerRatingDefault {PlayerId = playerBId, Rating = playerBRating}, outCome);
         }
     }
 }

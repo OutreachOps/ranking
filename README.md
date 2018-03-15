@@ -19,3 +19,7 @@ var calculator = EloCalculatorFactory.Create();
         new CurrentPlayerRatingDefault {PlayerId = "B", Rating = 1583},
         MatchOutcome.PlayerAWin);
 ```
+
+# Elo Rating Links  
+[Matter of stats Elo rating post](https://mafl-online.squarespace.com/mafl-stats-journal/2013/10/13/building-your-own-team-rating-system.html)  
+

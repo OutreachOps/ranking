@@ -52,6 +52,40 @@ namespace OutreachOperations.Ranking.Test.Elo
             Assert.Equal(1572 , result.PlayerA.Rating);
             Assert.Equal(1583 , result.PlayerB.Rating);
         }
+
+        [Fact]
+        public void PlayerADefeatsPlayerB_ParamInput()
+        {
+            var calculator = EloCalculatorFactory.Create();
+
+            var result = calculator.Calculate(1572, "A", 1583, "B", MatchOutcome.PlayerAWin);
+
+            Assert.Equal(1572 + 8, result.PlayerA.Rating);
+            Assert.Equal(1583 - 8, result.PlayerB.Rating);
+
+        }
+
+        [Fact]
+        public void PlayerBDefeatsPlayerA_ParamInput()
+        {
+            var calculator = EloCalculatorFactory.Create();
+
+            var result = calculator.Calculate(1572, "A", 1583, "B", MatchOutcome.PlayerBWin);
+
+            Assert.Equal(1572 - 7, result.PlayerA.Rating);
+            Assert.Equal(1583 + 7, result.PlayerB.Rating);
+        }
+
+        [Fact]
+        public void PlayersDraw__ParamInput()
+        {
+            var calculator = EloCalculatorFactory.Create();
+
+            var result = calculator.Calculate(1572,"A",1583,"B",MatchOutcome.Draw);
+
+            Assert.Equal(1572, result.PlayerA.Rating);
+            Assert.Equal(1583, result.PlayerB.Rating);
+        }
     }
 
 

@@ -3,6 +3,8 @@
     public interface EloCalculator
     {
         NewRatings Calculate(CurrentPlayerRating playerA, CurrentPlayerRating playerB, MatchOutcome outCome);
+        NewRatings Calculate(int playerARating, string playerAId, int playerBRating,string playerBId,  MatchOutcome outCome);
+
     }
 
     public static class EloCalculatorFactory
